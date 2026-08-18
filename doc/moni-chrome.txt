@@ -1,0 +1,109 @@
+*moni-chrome.txt*              Amber monochrome colors for Neovim
+
+===============================================================================
+CONTENTS                                                     *moni-chrome*
+
+1. Setup ............................................ |moni-chrome-setup|
+2. Loading ........................................... |moni-chrome-load|
+3. Options ......................................... |moni-chrome-options|
+4. Palette ......................................... |moni-chrome-palette|
+5. Integrations ................................. |moni-chrome-integrations|
+6. Terminal colors ................................ |moni-chrome-terminal|
+
+===============================================================================
+1. Setup                                                *moni-chrome-setup*
+
+Requires Neovim 0.12 or newer.
+
+Setup stores a fresh configuration and applies the theme immediately: >lua
+
+    require("moni-chrome").setup({})
+<
+Calling setup with nil uses defaults: >lua
+
+    require("moni-chrome").setup(nil)
+<
+Unknown options and values with the wrong type raise an error before Neovim
+clears the current theme.
+
+===============================================================================
+2. Loading                                                *moni-chrome-load*
+
+Load the theme through Vim's colorscheme command: >vim
+
+    colorscheme moni-chrome
+<
+Or reload the stored configuration through Lua: >lua
+
+    require("moni-chrome").load()
+<
+The loader sets 'background' to "dark", enables 'termguicolors', applies all
+highlight groups, assigns 16 terminal colors, and sets |g:colors_name| to
+"moni-chrome".
+
+===============================================================================
+3. Options                                             *moni-chrome-options*
+
+The default configuration is: >lua
+
+    {
+      transparent = false,
+      dim_inactive_windows = true,
+      on_colors = nil,
+      on_highlights = nil,
+    }
+<
+                                                        *moni-chrome-transparent*
+transparent ~
+    Boolean. Removes backgrounds and overrides inactive dimming.
+
+                                       *moni-chrome-dim-inactive-windows*
+dim_inactive_windows ~
+    Boolean. Dims inactive windows unless transparent.
+
+                                                    *moni-chrome-on-colors*
+on_colors ~
+    Function or nil. Edits colors before highlights and terminal colors.
+
+                                                *moni-chrome-on-highlights*
+on_highlights ~
+    Function or nil. Edits highlights before application.
+
+Callbacks run once per theme build. Return values are ignored.
+
+===============================================================================
+4. Palette                                             *moni-chrome-palette*
+
+Moni Chrome palette keys:
+
+    screen                  #050301
+    screen_lifted           #0a0602
+    screen_solid            #050301
+    screen_lifted_solid     #0a0602
+    phosphor                #ff9e2c
+    phosphor_soft           #f08a22
+    phosphor_dim            #c66a1a
+    phosphor_faint          #b85d14
+    phosphor_bright         #ffb156
+    phosphor_ghost          #794110
+    glow_low                #170e04
+    glow_medium             #281907
+    glow_high               #3c250b
+    none                    NONE
+
+Transparency changes screen and screen_lifted to NONE. Solid anchors remain
+available for inverse text, search, and terminal colors.
+
+===============================================================================
+5. Integrations                                   *moni-chrome-integrations*
+
+Supports GitSigns, Telescope, nvim-cmp, WhichKey, Noice, Flash,
+TreesitterContext, and Lualine.
+
+===============================================================================
+6. Terminal colors                                   *moni-chrome-terminal*
+
+All 16 ANSI slots use amber tones. Programs that rely on hue alone may be harder
+to read.
+
+vim:tw=78:ts=8:noet:ft=help:norl:
