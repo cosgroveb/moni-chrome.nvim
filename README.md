@@ -5,6 +5,8 @@ display option shipped with the 1985 Leading Edge Model D.
 
 Requires Neovim 0.12 or newer.
 
+<img width="1168" height="356" alt="image" src="https://github.com/user-attachments/assets/33e0ec82-4b5a-4ec9-866f-dbb5744b2927" />
+
 ## Installation
 
 With [lazy.nvim](https://github.com/folke/lazy.nvim):
