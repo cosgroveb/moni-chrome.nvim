@@ -48,7 +48,7 @@ require("moni-chrome").setup({
 - `on_colors` edits colors before highlights and terminal colors.
 - `on_highlights` edits highlights before application.
 
-Callbacks run once per theme build. Their return values are ignored.
+Callbacks run once per theme build. Moni Chrome ignores their return values.
 
 ## Palette
 
